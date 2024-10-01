@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="message1" class="objects.Message" >
+        <property name="messageText" value="Hello, Welcome Message 1." />
+        <property name="receiver" >
+            <bean class="objects.Receiver">
+                <property name="receiverName" value="John Doe" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="message2" class="objects.Message" >
+        <property name="messageText" value="Hello, Welcome Message 2." />
+        <property name="receiver" ref="receiver1" />
+    </bean>
+
+    <bean id="receiver1" class="objects.Receiver">
+        <property name="receiverName" value="Jane Doe" />
+    </bean>
+
+</beans>

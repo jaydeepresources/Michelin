@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!--    lazy-init="true"    -->
+    <!--  creates beans only if they are fetched  -->
+    <!--    scope="prototype"   -->
+    <!--  creates unique beans  -->
+
+    <bean id="message1" class="simple.Message" >
+        <property name="messageText" value="Hello, Welcome Message (SI)." />
+    </bean>
+
+    <bean id="message2" class="simple.Message">
+        <constructor-arg name="messageText" value="Hello, Welcome Message (CI)."/>
+    </bean>
+
+</beans>
