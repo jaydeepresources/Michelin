@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: users_route
+          uri: https://jsonplaceholder.typicode.com/users
+          predicates:
+            - Path=/users
